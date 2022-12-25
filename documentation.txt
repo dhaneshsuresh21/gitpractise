@@ -10,20 +10,17 @@ git config --global user.name "dhanesh"
 git config --global user.email "dhaneshsur18ce@student.mes.ac.in"
 -- sets the global configuration option for your Git user email to "dhaneshsur18ce@student.mes.ac.in".
 
-** git config --global user.name "dhanesh" is a command that sets the global configuration option for your Git user name to "dhanesh". 
-** This option specifies the name that is associated with your commits.
-   The --global flag specifies that the configuration option should be set for all repositories on your computer, rather than just 
+-- git config --global user.name "dhanesh" is a command that sets the global configuration option for your Git user name to "dhanesh". 
+-- This option specifies the name that is associated with your commits.
+-- The --global flag specifies that the configuration option should be set for all repositories on your computer, rather than just 
    for the current repository. If you omit the --global flag, the configuration option will be set only for the current repository.
-   It's a good practice to set your Git user name and email address before starting to use Git, as this information is included in 
+-- It's a good practice to set your Git user name and email address before starting to use Git, as this information is included in 
    the commit metadata and is used to identify the author of each commit.
-   To set your Git email address, you can use the following command:
-
-Copy code
-git config --global user.email "dhanesh@example.com"
-You can also use the git config command to view or modify other configuration options for your Git setup. For example, to view your current Git user name, you can use the following command:
-
-Copy code
-git config --global user.name
+-- To set your Git email address, you can use the following command:
+   git config --global user.email "dhanesh@example.com"
+-- You can also use the git config command to view or modify other configuration options for your Git setup.
+-- For example, to view your current Git user name, you can use the following command:
+   git config --global user.name
 To see a list of all configuration options that are set for your Git setup, you can use the git config --list command.
 git init
 -- To create a new git repository inside the project to keep a track of the changes made in project folder.
@@ -56,4 +53,29 @@ git add file_name
 git add .
 -- To add all untracked files in the staging area.
 
+git restore --staged file_name
+-- To remove the particular file from the staging area.
 
+git restore --staged .
+-- To remove all the files from the staging area.
+
+The git restore command allows you to undo changes that have been staged using git add. 
+When you use the --staged flag, git restore will un-stage the changes and restore the 
+files to their state at the last commit, but it will not discard the changes that you made to the files.
+
+red color text : changes outside of the staging area.
+green color text : changes added in the staging area.
+
+git log
+-- To view all the commits.
+
+git reset hasiID(eg: 9b414baa2064eb185f857a8f2e242fed00587cc5)
+-- To reset the project to particular commit.
+-- git log will provide hashID for every commit, and we can jump into previous commit using that.
+-- All the changes that were made after this particular commit will be in unstaging area.
+
+git stash 
+-- git stash is a command in Git that allows you to temporarily store changes that you have made to your 
+   working directory so that you can switch to a different branch or switch to a clean version of your current branch. 
+-- This is useful when you need to switch to a different branch to work on something else, but you don't want to commit 
+   the changes you have made in your current branch.
