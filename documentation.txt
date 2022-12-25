@@ -79,3 +79,85 @@ git stash
    working directory so that you can switch to a different branch or switch to a clean version of your current branch. 
 -- This is useful when you need to switch to a different branch to work on something else, but you don't want to commit 
    the changes you have made in your current branch.
+
+
+warning: in the working copy of 'homes.txt', LF will be replaced by CRLF the next time Git touches it
+
+This warning message is displayed when you have made changes to a file that uses a different line ending style than the
+ one configured in your Git settings.
+
+By default, Git is configured to use "CRLF" (Carriage Return + Line Feed) line endings on Windows systems and "LF" (Line Feed)
+line endings on Linux and macOS systems. This is because different operating systems use different line ending styles to represent
+ the end of a line in a text file.
+
+If you see this warning message, it means that you have edited a file in a way that will cause Git to change its line endings
+ when you next commit the file. This can be a problem if you are working on a team with people who use different operating systems,
+  as it can cause conflicts when merging branches.
+
+To avoid this warning, you can configure Git to use the same line ending style as the file you are editing by running the 
+following command:
+    git config --global core.eol lf
+    git config --global core.autocrlf input
+This will configure Git to use "LF" line endings for all files and to convert line endings to the appropriate style when adding files to the staging area.
+
+Alternatively, you can disable this warning by running the following command:
+    git config --global core.safecrlf false
+This will tell Git to allow you to commit files with mixed line endings without displaying a warning. 
+However, it's generally a good idea to use the same line ending style for all of your files to avoid potential conflicts.
+
+git stash 
+-- git stash is a command in Git that allows you to temporarily store changes that you have made to your working directory so 
+-- that you can switch to a different branch or switch to a clean version of your current branch. This is useful when you need to 
+-- switch to a different branch to work on something else, but you don't want to commit the changes you have made in your current branch.
+git stash pop 
+-- To bring back the top changes into staging area.
+
+git remote add origin https://github.com/dhaneshsuresh21/gitpractise
+-- To add external or remote repository to the local project
+-- To add a remote repository as the origin for your local repository using the git remote add command, 
+   you would run the following command:
+   git remote add origin https://github.com/dhaneshsuresh21/gitpractise
+-- This will add the remote repository at the specified URL as a remote named "origin" for your local repository. 
+-- You can then use the git push command to push your local commits to the remote repository. For example:
+   git push origin master
+-- This will push the commits in your local master branch to the master branch on the remote repository.
+-- It's important to note that the git remote add command only adds the remote repository to your local configuration.
+-- It doesn't actually create a new repository on the remote server. 
+
+git remote remove origin
+-- To remove the remote repository.
+-- To remove a remote repository from your local Git configuration, you can use the git remote remove command.
+-- For example, if you want to remove a remote named "origin" from your local repository, you would run the following command:
+   git remote remove origin
+-- This will remove the "origin" remote from your local repository's configuration. You can also use the git remote 
+   command with the -v flag to view a list of your configured remotes and their URLs. For example:
+   git remote -v
+-- This will display a list of your configured remotes and their URLs, along with the name of the remote.
+
+-- It's important to note that removing a remote repository from your local configuration does not delete the repository from 
+   the remote server. It simply removes the connection between your local repository and the remote repository. 
+   If you want to delete a repository from the remote server, you will need to follow the appropriate steps for the hosting 
+   service you are using (such as GitHub or GitLab).
+
+git remote -v
+--  list of your configured remotes and their URLs
+
+git push origin master
+-- The git push command is used to upload local repository commits to a remote repository. 
+   The origin argument specifies the name of the remote repository, 
+   and master specifies the name of the branch you want to push to the remote repository.
+
+-- For example, the command git push origin master will push the commits in your local master branch to 
+   the master branch on the remote repository specified by the origin remote.
+
+-- Before you can use the git push command, you need to make sure that you have a remote repository configured
+   and that you have committed your changes to your local repository. You can use the git remote command to view your configured remotes,
+   and the git status and git log commands to see your local commits.
+
+-- It's important to note that the git push command can only be used to push commits that are reachable from the current commit in 
+   your local repository. If you have made commits that are not reachable from your current commit, 
+   you will need to use the git push command with the --force flag to overwrite the remote repository's commits with your own. 
+   However, this can cause data loss and should be used with caution.
+
+
+
