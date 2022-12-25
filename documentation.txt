@@ -1,0 +1,59 @@
+git --version
+-- To check the version of the git.
+
+git
+-- To check whether the git is installed or not, it gives a bunch of information.
+
+git config --global user.name "dhanesh"
+-- sets the global configuration option for your Git user name to "dhanesh".
+
+git config --global user.email "dhaneshsur18ce@student.mes.ac.in"
+-- sets the global configuration option for your Git user email to "dhaneshsur18ce@student.mes.ac.in".
+
+** git config --global user.name "dhanesh" is a command that sets the global configuration option for your Git user name to "dhanesh". 
+** This option specifies the name that is associated with your commits.
+   The --global flag specifies that the configuration option should be set for all repositories on your computer, rather than just 
+   for the current repository. If you omit the --global flag, the configuration option will be set only for the current repository.
+   It's a good practice to set your Git user name and email address before starting to use Git, as this information is included in 
+   the commit metadata and is used to identify the author of each commit.
+   To set your Git email address, you can use the following command:
+
+Copy code
+git config --global user.email "dhanesh@example.com"
+You can also use the git config command to view or modify other configuration options for your Git setup. For example, to view your current Git user name, you can use the following command:
+
+Copy code
+git config --global user.name
+To see a list of all configuration options that are set for your Git setup, you can use the git config --list command.
+git init
+-- To create a new git repository inside the project to keep a track of the changes made in project folder.
+-- git init is a command used to create a new Git repository. It can be used to turn an existing directory into a Git repository,
+   or to create a new Git repository from scratch.
+-- To use git init, navigate to the directory that you want to turn into a Git repository using the command line,
+-- and then enter git init. This will create a new subdirectory called .git that contains all of the necessary files 
+   for the Git repository.
+-- you can start tracking changes to the files in the repository using Git commands.
+
+ls -a
+-- To view the hidden git repository.
+
+ls .git
+-- To view the files inside the git repository.
+
+touch file_name.txt
+-- To create a new file.
+
+** If you see a message similar to "Untracked files: (use git add <file>... to include in what will be committed)",
+   it means that you have added or modified files in your local repository, but they are not being tracked by Git.
+
+** To include these files in your next commit, you can use the git add command followed by the name of the file or 
+   files that you want to track. For example, to add a file called main.cpp to the staging area, you can use the following command:
+   git add main.cpp
+
+git add file_name
+-- To add the desred file in git staging area.
+
+git add .
+-- To add all untracked files in the staging area.
+
+
